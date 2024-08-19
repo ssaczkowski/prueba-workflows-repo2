@@ -1,0 +1,19 @@
+name: My Target Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-workflow]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Clone Repository 1
+        run: |
+          git clone https://github.com/owner-del-repo1/nombre-del-repo1.git
+          
+      # Añade aquí los pasos adicionales que necesites
